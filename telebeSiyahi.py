@@ -12,13 +12,12 @@ Qeyd: Proqramdan çıxmaq üçün "6" -ya basın.
 """)
 telebe = []
 while True:
-  operation = int(input("Əməliyyatı seçin: "))
-  if (operation>0 and operation<7 ):
-    if (operation == 6):
+    operation = input("Əməliyyatı seçin: ")
+    if operation == "6" :
         print("Proqramdandan istifadə etdiyiniz üçün təşəkkür edirik!")
         break
     #1. Yeni tələbə əlavə edilməsi
-    elif (operation == 1):
+    elif (operation == "1"):
         print("""
         Tələbə üçün daxil ediləcək məlumatlar:
         -Tələbə kodu (3rəqəmli bir ədəd daxil edin!)
@@ -55,7 +54,7 @@ while True:
             if cixis=="q":
                 break
     #2. Tələbə koduna görə tələbə məlumatlarının silinməsi
-    elif (operation == 2 and len(telebe)!=0):
+    elif (operation == "2" and len(telebe)!=0):
         tapKod = input("Silmək istədiyiniz tələbə məlumatlarına uyğun tələbə kodu daxil edin: ")
         print(telebe)
         for i in range(len(telebe)):
@@ -64,7 +63,7 @@ while True:
                 telebe.pop(i)
         print(telebe)
     #3. Tələbə koduna görə tələbə məlumatlarının dəyişdirilməsi
-    elif (operation == 3 and len(telebe)!=0):
+    elif (operation == "3" and len(telebe)!=0):
         print(telebe)
         tapKod = input("Məlumatlarını dəyişmək istədiyiniz tələbənin kodunu daxil edin: ")
         for i in range(len(telebe)):
@@ -91,7 +90,7 @@ while True:
                     telebe[i][4] = deyisenTelefon
         print(telebe)
     #4. Tələbə adına görə tələbə məlumatlarının göstərilməsi
-    elif (operation==4 and len(telebe)!=0):
+    elif (operation=="4" and len(telebe)!=0):
         tapilanAd = input("Tələbə adınızı daxil edin: ")
         for i in range(len(telebe)):
             telebeMelumatiAd = telebe[i][1]
@@ -101,7 +100,7 @@ while True:
                     x += telebe[i][j] + ", "
                 print(x)
     #5. Bütün tələbə məlumatlarının göstərilməsi
-    elif (operation==5 and len(telebe)!=0):
+    elif (operation=="5" and len(telebe)!=0):
         telebeList = " "
         for a in range(len(telebe)):
             for b in range(len(telebe[a])):
@@ -109,6 +108,4 @@ while True:
             print(telebeList)
             telebeList = " "
     else:
-        print("Göstəriləcək tələbə məlumatı yoxdur, yeni tələbə daxil edin!")
-  else:
-      print("Düzgün rəqəm daxil edin!")
+        print(" '1' rəqəmini daxil edib, yeni tələbə məlumatlarını əlavə edin!")
